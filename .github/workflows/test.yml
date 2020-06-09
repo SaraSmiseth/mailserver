@@ -1,0 +1,25 @@
+name: Docker
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  pull_request:
+    branches: master
+  push:
+    branches: master
+    tags:
+      - v*
+
+jobs:
+  # run tests
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
+        
+      - name: Test
+        run: make
