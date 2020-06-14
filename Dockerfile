@@ -1,4 +1,4 @@
-FROM sarasmiseth/debian-mail-overlay:edge
+FROM sarasmiseth/debian-mail-overlay:nightly
 
 LABEL description="Simple and full-featured mail server using Docker"
 
